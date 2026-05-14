@@ -1,0 +1,71 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  color: white;
+  z-index: 7;
+}
+
+
+.contact-intro p {
+  margin-top: 15px;
+  color: var(--subtext);
+}
+
+/* LINKS */
+.contact-options {
+  display: flex;
+  gap: 20px;
+
+  a {
+    padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    background: rgba(255,255,255,0.05);
+  }
+}
+
+/* FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 800px;
+  input,
+  textarea {
+    padding: 12px;
+    background: #111;
+    border: 1px solid #333;
+    color: white;
+    outline: none;
+
+    &:focus {
+      border-color: #4f8cff;
+    }
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  button {
+    background-color: #4f8cff;
+    &:hover{
+      transform: none;
+      color: rgb(207, 199, 199);
+    }
+  }
+
+  p {
+    color: red;
+    font-size: 0.8em;
+  }
+  .status{
+    color: #4f8cff;
+  }
+}

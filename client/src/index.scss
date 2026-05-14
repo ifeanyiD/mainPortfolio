@@ -1,0 +1,89 @@
+*,::after,::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --primary: #4f8cff;
+  --bg: #0d0d0d;
+  --text: #ffffff;
+  --subtext: #a0a0a0;
+  --wvPadding : clamp(20px, 4vw, 40px);
+}
+html, body {
+  scroll-behavior: auto;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  font-size: clamp(1.1rem, 5vw, 1.6rem);
+  position: relative;
+  z-index: 0;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("/assets/noise.jpg");
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+}
+.app {
+  // scroll-snap-type: y mandatory;
+  // overflow-y: scroll;
+  // min-height: 100vh;
+}
+
+.section {
+  // scroll-snap-align: start;
+  min-height: 100vh;
+  &:not(:last-child){
+    margin-bottom: 30px;
+  }
+  &:last-child{
+    background: linear-gradient(to bottom, #0d0d0d, #0a0a0a);
+  }
+}
+
+.container{
+  padding: var(--wvPadding);
+}
+
+h1 {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 1.3;
+  letter-spacing: -1.5px;
+}
+.hero-text h1{
+  font-size: clamp(3rem, 7vw, 7rem);
+}
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -1.8px;
+}
+h3 {
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  line-height: 1.2;
+}
+p {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: #a0a0a0;
+  max-width: 700px;
+}
+span{
+  // font-size: 13px;
+}
+button{
+   padding: 12px 25px;
+   background: var(--primary);
+   border: none;
+   color: white;
+   cursor: pointer;
+   backdrop-filter: blur(5px);
+   &:hover{
+    transform: scale(1.1);
+   }
+}

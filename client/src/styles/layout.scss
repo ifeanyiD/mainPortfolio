@@ -1,0 +1,33 @@
+.layout {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+
+/* LEFT SIDE */
+aside {
+  height: 100vh;
+  position: sticky;
+  left: 0;
+  top: 0;
+  background: #0d0d0d;
+  z-index: 10;
+  padding: 20px 0;
+}
+
+/* RIGHT SIDE */
+.main-content {
+  min-height: 100vh;
+}
+
+@media (max-width : 720px){
+  .layout{
+    display: flex;
+    flex-direction: column;
+    aside{
+      padding: 0 20px;
+      height : 100px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
