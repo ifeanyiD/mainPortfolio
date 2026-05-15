@@ -1,22 +1,19 @@
-import { useEffect } from "react";
-import Home from "./pages/Home";
-import { initSmoothScroll } from "./utils/smoothScroll";
+import { useEffect, lazy, Suspense } from "react";
 import { SectionProvider } from "./context/SectionContext";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import ProjectDetail from "./pages/ProjectDetail";
+import Home from "./pages/Home";
+const ProjectDetail = lazy(()=> import("./pages/ProjectDetail"));
 
 function App() {
 
-  useEffect(() => {
-    initSmoothScroll();
-  }, []);
-
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<SectionProvider> <Home /> </SectionProvider>}/>
-        <Route path="/project/:id" element={<ProjectDetail/>}/>
-      </Routes>
+      <Suspense fallback={<p>Loading page...</p>}>
+        <Routes>
+          <Route path="/" element={<SectionProvider> <Home /> </SectionProvider>}/>
+          <Route path="/project/:id" element={<ProjectDetail/>}/>
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

@@ -50,7 +50,7 @@ export default function Hero() {
       {/* RIGHT SIDE (IMAGE + TEXT) */}
       <div className="hero-right">
         <div className="image-wrapper">
-          <img src={HeroPic} alt="hero" />
+          <img src={HeroPic} alt="hero"  loading="lazy"/>
         </div>
         <div className="overlay"></div>
 

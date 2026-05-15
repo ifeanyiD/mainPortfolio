@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import "../../styles/sections/project.scss";
 
 const projects = [
@@ -44,10 +45,12 @@ export default function Projects() {
             transition={{ delay: i * 0.2 }}
             onClick={()=> navigate(`/project/${i}`)}
           >
-            <div className="image-wrapper">
-              <img src={project.image} alt="" />
-              <div className="overlay"></div>
-            </div>
+            <Suspense fallback={<p>Loading...</p>}>
+                <div className="image-wrapper">
+                    <img src={project.image} alt="" />
+                    <div className="overlay"></div>
+                </div>
+            </Suspense>
 
             <div className="project-info">
               <h3>{project.title}</h3>
