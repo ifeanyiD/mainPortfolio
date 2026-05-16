@@ -25,10 +25,13 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("/assets/noise.jpg");
+  background: url("/assets/noise-1200.jpg");
   opacity: 0.35;
   pointer-events: none;
   z-index: -1;
+  @media (max-width : 768px){
+    background: url("/assets/noise-768.jpg");
+  }
 }
 .app {
   // scroll-snap-type: y mandatory;

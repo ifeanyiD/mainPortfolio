@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import HeroPic from "../../utils/assets/nero.jpg";
 import "../../styles/sections/hero.scss";
 import { useEffect } from "react";
 import { useSection } from "../../context/SectionContext";
@@ -50,7 +49,19 @@ export default function Hero() {
       {/* RIGHT SIDE (IMAGE + TEXT) */}
       <div className="hero-right">
         <div className="image-wrapper">
-          <img src={HeroPic} alt="hero"  loading="lazy"/>
+          <img 
+               src="/assets/nero-420.jpg" 
+               srcSet="
+                /assets/nero-420.jpg 400w,
+                /assets/nero-786.jpg 800w,
+                /assets/nero-1200.jpg 1200w
+               "
+               sizes="
+                (max-width: 600px) 400px,
+                (max-width: 1024px) 800px, 1200px
+               "
+               alt="hero"  
+               loading="lazy"/>
         </div>
         <div className="overlay"></div>
 
